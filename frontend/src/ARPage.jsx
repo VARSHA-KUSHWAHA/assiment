@@ -8,9 +8,9 @@ export default function ARPage() {
     const sendScanData = async () => {
       const endTime = Date.now();
       const timeSpent = Math.floor((endTime - startTime) / 1000); // seconds
-
+      const baseURL = import.meta.env.VITE_API_BASE_URL;
       try {
-       await axios.post('http://localhost:5000/api/scan', {
+     await axios.post(`${baseURL}/api/scan`, {
   timeSpent
 });
         console.log('Scan data sent');

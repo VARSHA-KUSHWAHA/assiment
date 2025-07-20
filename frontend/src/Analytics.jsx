@@ -5,9 +5,15 @@ export default function Analytics() {
   const [data, setData] = useState({ totalScans: 0, avgTime: 0 });
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/analytics').then((res) => {
-      setData(res.data);
-    });
+    const baseURL = import.meta.env.VITE_API_BASE_URL;
+
+    axios.get(`${baseURL}/api/analytics`)
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching analytics:", err);
+      });
   }, []);
 
   return (
