@@ -1,0 +1,43 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AR Campaign API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/scan": {
+      "post": {
+        "summary": "Record a scan event",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "timeSpent": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Scan recorded" }
+        }
+      }
+    },
+    "/api/analytics": {
+      "get": {
+        "summary": "Get campaign analytics",
+        "responses": {
+          "200": {
+            "description": "Returns scan stats"
+          }
+        }
+      }
+    }
+  }
+}
+
