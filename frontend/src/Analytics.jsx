@@ -5,16 +5,18 @@ export default function Analytics() {
   const [data, setData] = useState({ totalScans: 0, avgTime: 0 });
 
   useEffect(() => {
-    const baseURL = import.meta.env.VITE_API_BASE_URL;
-
-    axios.get(`${baseURL}/api/analytics`)
-      .then((res) => {
+    const fetchAnalytics = async () => {
+      try {
+        const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/analytics`);
         setData(res.data);
-      })
-      .catch((err) => {
-        console.error("Error fetching analytics:", err);
-      });
+      } catch (err) {
+        console.error('Error fetching analytics:', err.message);
+      }
+    };
+
+    fetchAnalytics();
   }, []);
+
 
   return (
     <div className="bg-gray-200 p-4 rounded">
@@ -24,4 +26,3 @@ export default function Analytics() {
     </div>
   );
 }
-
