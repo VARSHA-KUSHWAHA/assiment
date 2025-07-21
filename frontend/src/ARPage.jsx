@@ -36,7 +36,7 @@ export default function ARPage() {
         <source src="/sample-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <img src="/001.jpg" alt="AR Visual" className="w-64 h-auto rounded shadow-lg" />
+    
 
       <img src="001" alt="AR Example" className="mx-auto w-1/2 rounded shadow" />
     </div>
