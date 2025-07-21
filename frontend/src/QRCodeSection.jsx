@@ -2,7 +2,8 @@ import React from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 
 export default function QRCodeSection() {
-  const scanURL = 'https://assiment-liart.vercel.app/ar'; 
+  const scanURL = 'https://assiment-a2vf.onrender.com/ar'; 
+  
   
   // Simulated AR page
 
