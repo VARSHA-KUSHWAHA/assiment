@@ -16,6 +16,9 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use('/api', scanRoutes);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
-
+app.get('/ar', (req, res) => {
+  res.send('AR page is working!');
+});
+  
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
