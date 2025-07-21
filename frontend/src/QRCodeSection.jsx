@@ -2,7 +2,10 @@ import React from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 
 export default function QRCodeSection() {
-  const scanURL = 'http://localhost:5173/ar'; // Simulated AR page
+  const scanURL = 'https://assiment-liart.vercel.app/ar'; 
+  
+  // Simulated AR page
+
 
   return (
     <div className="mb-6 flex flex-col items-center justify-center text-center">
